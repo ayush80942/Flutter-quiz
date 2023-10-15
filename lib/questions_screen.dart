@@ -45,11 +45,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             ...currentQuestion.getShuffledAnswers().map((answers) {
-              return AnswerButton(
-                answerText: answers,
-                onTap: () {
-                  answerQuestions(answers);
-                },
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AnswerButton(
+                  answerText: answers,
+                  onTap: () {
+                    answerQuestions(answers);
+                  },
+                ),
               );
             })
           ],
